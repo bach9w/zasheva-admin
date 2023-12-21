@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { auth } from '@clerk/nextjs';
 
 import prismadb from '@/lib/prismadb';
 
 export async function GET(
-	req: Request,
+	req: NextRequest,
 	{ params }: { params: { storeId: string } },
 ) {
 	try {
@@ -31,7 +31,7 @@ export async function GET(
 }
 
 export async function POST(
-	req: Request,
+	req: NextRequest,
 	{ params }: { params: { storeId: string } },
 ) {
 	try {
